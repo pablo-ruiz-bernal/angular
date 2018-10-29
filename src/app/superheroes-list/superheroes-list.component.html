@@ -1,0 +1,15 @@
+<h1>Superheroes List</h1>
+<ul *ngIf="superheroes">
+    <li *ngFor = "let hero of superheroes">{{hero.name}}<br>aka {{hero.alterEgo}}
+        <ul *ngIf="hero.superpowers">
+            <li *ngFor="let power of hero.superpowers">{{power}}</li>
+        </ul>
+    </li>
+</ul>
+Enter a superhero name <input [(ngModel)]=name /><br>
+<h2>{{name}}</h2>
+
+<div [ngSwitch]="name">
+    <p *ngSwitchCase="'Batman'">You are batman!</p>
+    <p *ngSwitchCase="'Pepito'">You are not a superhero!</p>x
+</div>
